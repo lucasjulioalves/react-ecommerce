@@ -1,0 +1,34 @@
+.product-container {
+    display: flex;
+    padding: 30px;
+    justify-content: space-between;
+    height: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 300px;
+    border: 2px solid rgb(148, 148, 148);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.product-item-img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 15px;
+}
+.product-item-img img{
+    width: 80%;
+    height: 80%;
+}
+.product-item-title {
+    text-align: center;
+}
+.product-item-price {
+    text-align: center;
+}
