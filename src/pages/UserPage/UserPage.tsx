@@ -1,11 +1,12 @@
 import { NavLink, Outlet } from "react-router-dom";
 import "./UserPage.css";
 function UserPage() {
+    
     return(<div className="user-page">
         <div className="user-page-options">
             <ul>
                 <NavLink to={'/user/info'}><li>User Info</li></NavLink>
-                <li>Adresses</li>
+                <li>Addresses</li>
                 <li>Orders</li>
                 <li>Coupons</li>
             </ul>

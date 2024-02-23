@@ -9,7 +9,7 @@
     border: 2px solid grey;
     padding: 30px 30px 45px 30px;
     border-radius: 10px;
-    min-height: 188px;
+    height: 500px;
 }
 
 .user-page-options ul li {
@@ -26,5 +26,6 @@
     padding: 20px;
     border: 2px solid grey;
     border-radius: 10px;
-    min-height: 223px;
+    height: 535px;
+    width: 60vw;
 }

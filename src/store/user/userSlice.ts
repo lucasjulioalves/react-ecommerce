@@ -17,6 +17,7 @@ const userSlice = createSlice({
     reducers: {
         login: (user, action : PayloadAction<User>) => {
             user.value = action.payload;
+            console.log(user.value, action);
         },
     },
 });

@@ -17,7 +17,7 @@ function Header() {
           }</li>
 
         <li> {user.isLogged ? 
-          <Link to={"/user"}>My Profile</Link> :
+          <Link to={"/user/info"}>My Profile</Link> :
           <Link to={"/login"}>Login</Link>
           }</li>
 
