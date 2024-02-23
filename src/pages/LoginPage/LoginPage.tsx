@@ -1,7 +1,10 @@
 import { useForm, SubmitHandler } from "react-hook-form"
 import "./LoginPace.css";
 import { useNavigate } from "react-router-dom";
-
+import { AppDispatch } from "../../store/store";
+import UserService from "../../service/User.service";
+import {login as loginDispatch} from '../../store/user/userSlice';
+import { useDispatch } from "react-redux";
 interface LoginFormInput {
     email: string
     password: string
@@ -16,13 +19,19 @@ function LoginPage() {
         }, 
     } = useForm<LoginFormInput>();
 
+    const dispatch = useDispatch<AppDispatch>();
     const onSubmit: SubmitHandler<LoginFormInput> = (data) => login(data)
     const navigate = useNavigate();
 
     const login = (data: LoginFormInput) => {
-        console.log(data);
-        navigate("/");
+        const service = new UserService();
+        service.login(data.email, data.password).then((res) => {
+            dispatch(loginDispatch(res));
+            navigate("/");
+        })
+        
     }
+
     return (
       <form onSubmit={handleSubmit(onSubmit)}>
         <input {...register("email", {
