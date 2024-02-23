@@ -1,0 +1,30 @@
+.user-page {
+    display: flex;
+    align-items: center;
+    width: 60vw;
+}
+
+.user-page-options ul {
+    list-style-type: none;
+    border: 2px solid grey;
+    padding: 30px 30px 45px 30px;
+    border-radius: 10px;
+    min-height: 188px;
+}
+
+.user-page-options ul li {
+    padding: 10px;
+    border-bottom: 1px solid grey;
+    cursor: pointer;
+}
+
+.user-page-options ul li:hover {
+    background-color: rgb(93, 93, 93);
+}
+
+.user-page-content-container {
+    padding: 20px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    min-height: 223px;
+}

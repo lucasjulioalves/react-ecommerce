@@ -9,6 +9,8 @@ import CheckoutPage from './pages/CheckoutPage/CheckoutPage.tsx'
 import { store } from './store/store.ts';
 import { Provider } from 'react-redux'
 import LoginPage from './pages/LoginPage/LoginPage.tsx'
+import UserPage from './pages/UserPage/UserPage.tsx'
+import UserInfoPage from './pages/UserInfoPage/UserInfoPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,16 @@ const router = createBrowserRouter([
       {
          'path' : '/login',
          element: <LoginPage></LoginPage> 
+      },
+      {
+        'path' : '/user',
+        element: <UserPage></UserPage>,
+        children: [
+          {
+            'path' : '/user/info',
+            element: <UserInfoPage></UserInfoPage>
+          }
+        ]
       }
     ],
     errorElement: <h1>NotFound 404</h1>

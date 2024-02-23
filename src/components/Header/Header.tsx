@@ -8,7 +8,7 @@ function Header() {
     const cart : Cart = useSelector((state: RootState) => state.cart.value);
     const user : User = useSelector((state: RootState) => state.user.value);
 
-    return(<ul>
+    return(<ul className="header">
         <li><Link to={"/"}>Home</Link></li>
 
         <li>{cart.products.length === 0 ?
@@ -17,7 +17,7 @@ function Header() {
           }</li>
 
         <li> {user.isLogged ? 
-          <Link to={"/login"}>My Profile</Link> :
+          <Link to={"/user"}>My Profile</Link> :
           <Link to={"/login"}>Login</Link>
           }</li>
 
