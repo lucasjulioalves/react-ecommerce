@@ -14,11 +14,10 @@ class UserService {
     }
 
     async getInfo(id: number) {
-        console.log(id);
         await new Promise((resolve) => setTimeout(resolve, NumberUtil.getRandomInt(200)));
 
         return {
-            id: 0,
+            id: id,
             name: "Lucas",
             phoneNumber: "+55011948073154",
             gender: "M",
@@ -29,6 +28,10 @@ class UserService {
         } as User;
     }
     
+    async update(user: User) {
+        await new Promise((resolve) => setTimeout(resolve, NumberUtil.getRandomInt(200)));
+        return user;
+    }
 }
 
 export default UserService;

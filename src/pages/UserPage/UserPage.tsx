@@ -6,7 +6,7 @@ function UserPage() {
         <div className="user-page-options">
             <ul>
                 <NavLink to={'/user/info'}><li>User Info</li></NavLink>
-                <li>Addresses</li>
+                <NavLink to={'/user/address'}><li>Addresses</li></NavLink>
                 <li>Orders</li>
                 <li>Coupons</li>
             </ul>

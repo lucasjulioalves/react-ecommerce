@@ -1,0 +1,15 @@
+.address-item {
+    border-bottom: 3px solid lightgray;
+    text-align: left;
+}
+
+.address-item-button {
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.address-item-button button{
+    width: 130px;
+}

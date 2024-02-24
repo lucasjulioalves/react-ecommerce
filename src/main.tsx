@@ -11,6 +11,7 @@ import { Provider } from 'react-redux'
 import LoginPage from './pages/LoginPage/LoginPage.tsx'
 import UserPage from './pages/UserPage/UserPage.tsx'
 import UserInfoPage from './pages/UserInfoPage/UserInfoPage.tsx'
+import AddressPage from './pages/AddressPage/AddressPage.tsx'
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
           {
             'path' : '/user/info',
             element: <UserInfoPage></UserInfoPage>
+          },
+          {
+            'path' : '/user/address',
+            element: <AddressPage></AddressPage>
           }
         ]
       }

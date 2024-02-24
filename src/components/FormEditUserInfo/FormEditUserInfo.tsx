@@ -15,17 +15,17 @@ type OnSubmitFunction = (user: User) => void;
 
 function FormEditUserInfo( props : {
     onSubmit : OnSubmitFunction,
-    user: User
+    user?: User
 }){
     const onSubmitHandler: SubmitHandler<UserFormInput> = (data) => update(data)
     const { register, handleSubmit} = useForm<UserFormInput>({
         defaultValues: {
-            name: props.user.name,
-            phoneNumber: props.user.phoneNumber,
-            gender: props.user.gender,
-            email: props.user.email,
-            document: props.user.document,
-            birth: props.user.birth
+            name: props.user?.name,
+            phoneNumber: props.user?.phoneNumber,
+            gender: props.user?.gender,
+            email: props.user?.email,
+            document: props.user?.document,
+            birth: props.user?.birth
         }
     });
 

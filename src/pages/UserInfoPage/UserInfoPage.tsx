@@ -9,34 +9,44 @@ import FormEditUserInfo from "../../components/FormEditUserInfo/FormEditUserInfo
 
 function UserInfoPage() {
 
-    const [user, setUser] = useState({} as User);
+    const [user, setUser] = useState<User>();
     const [isEditing, setIsEditing] = useState(false);
     const navigate = useNavigate();
     const loggedUser : User = useSelector((state: RootState) => state.user.value);
-
+    const service = new UserService();
 
     useEffect(() => {
+
         if(isNaN(loggedUser.id)) {
             navigate('/');
-        } 
-        const service = new UserService();
-        service.getInfo(loggedUser.id).then((res) => {
-            setUser(res);
-        })
-    },[])
+            return;
+        } else {
+            if(!user) {
+                service.getInfo(loggedUser.id).then((res) => {
+                    setUser(res);
+                })
+            }
+        }
+        
+
+    },[isEditing])
 
     const updateUser = (user: User) => {
-        console.log(user);
-        setIsEditing(false);
+        service.update(user).then(() => {
+            setIsEditing(false);
+            setUser(null!);
+        })
+       
+        
     }
     const info = () => {
         return(<>
-            <p>Name: {user.name}</p>
-            <p>Phone Number: {user.phoneNumber}</p>
-            <p>Gender: {user.gender}</p>
-            <p>Email: {user.email}</p>
-            <p>Document: {user.document}</p>
-            <p>Birth: {user.birth}</p>
+            <p>Name: {user?.name}</p>
+            <p>Phone Number: {user?.phoneNumber}</p>
+            <p>Gender: {user?.gender}</p>
+            <p>Email: {user?.email}</p>
+            <p>Document: {user?.document}</p>
+            <p>Birth: {user?.birth}</p>
             <button onClick={() => setIsEditing(true)} >Edit</button>
         </>)
     }
